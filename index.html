@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NURK Cartoons</title>
+    <meta name="description" content="Portfolio met NURK cartoons, strips en tekeningen.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="NURK cartoons home">
+        <span class="brand-mark">N</span>
+        <span>NURK Cartoons</span>
+      </a>
+      <nav aria-label="Hoofdnavigatie">
+        <a href="#galerie">Galerie</a>
+        <a href="#over">Over</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Satire, observatie en inkt</p>
+          <h1 id="hero-title">NURK cartoons</h1>
+          <p class="intro">
+            Een portfolio voor losse cartoons, reeksen en publiceerbare tekeningen.
+            Bezoekers landen automatisch op de nieuwste NURK-dag.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#galerie">Bekijk galerie</a>
+            <a class="button secondary" href="#contact">Neem contact op</a>
+          </div>
+        </div>
+        <figure class="feature-panel" aria-label="Uitgelichte cartoon">
+          <div class="cartoon-frame feature-drawing" id="featureArt" role="img" aria-label="Uitgelichte NURK cartoon">
+            <span class="speech one">NURK</span>
+            <span class="speech two">...</span>
+            <span class="ink-line line-a"></span>
+            <span class="ink-line line-b"></span>
+            <span class="ink-line line-c"></span>
+          </div>
+          <figcaption id="featureCaption">Uitgelicht werk</figcaption>
+        </figure>
+      </section>
+
+      <section class="gallery-section" id="galerie" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Galerie</p>
+            <h2 id="gallery-title">Laatste NURK</h2>
+          </div>
+          <p class="current-day" id="currentDay"></p>
+        </div>
+        <div class="date-strip" id="dateStrip" aria-label="Kies publicatiedag"></div>
+        <div class="filters" role="list" aria-label="Filter media">
+          <button class="filter-button active" type="button" data-filter="alles">Alles</button>
+          <button class="filter-button" type="button" data-filter="cartoon">Cartoons</button>
+          <button class="filter-button" type="button" data-filter="video">Video</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="about-section" id="over" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">Over NURK</p>
+          <h2 id="about-title">Scherp kijken, kort tekenen</h2>
+        </div>
+        <p>
+          Deze portfolio is ingericht voor cartoons die direct te bekijken zijn:
+          grote previews, heldere titels en ruimte voor reeksen. Vervang de
+          tijdelijke beeldvakken door je eigen bestanden in de map
+          <strong>assets/cartoons</strong>. De eerste 8 tekens van de bestandsnaam
+          bepalen de publicatiedag, bijvoorbeeld <strong>26-07-15-cartoon.jpg</strong>.
+        </p>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Voor publicaties, opdrachten en exposities</h2>
+        </div>
+        <p>Voeg hier je e-mailadres, socials of opdrachtinformatie toe.</p>
+      </section>
+    </main>
+
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+      <button class="close-button" type="button" aria-label="Sluiten">x</button>
+      <div class="lightbox-art" id="lightboxArt"></div>
+      <div class="lightbox-copy">
+        <p class="eyebrow" id="lightboxCategory"></p>
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDescription"></p>
+      </div>
+    </dialog>
+
+    <script src="cartoons-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
