@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
     <meta name="description" content="A portfolio of NURK cartoons, comic strips and drawings.">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
   </head>
   <body>
     <header class="site-header">
@@ -71,11 +71,20 @@
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">For publications, commissions and exhibitions</h2>
+        <div><h2 id="contact-title">Contact</h2></div>
+        <div class="contact-copy">
+          <h3>Give your readers something to smile about.</h3>
+          <p>A sharp observation. An unexpected twist. A cartoon that makes readers stop, smile and share. Bring the NURK perspective to your newspaper, magazine, book or digital publication.</p>
+          <p>Looking to license a cartoon, commission an original or explore a regular feature? Tell us about your publication and what you have in mind. We’d love to discuss how NURK could fit your pages.</p>
+          <form id="publisherEnquiry">
+            <label for="enquiryName">Your name</label><input id="enquiryName" name="name" autocomplete="name" required>
+            <label for="enquiryPublication">Publication or publisher</label><input id="enquiryPublication" name="publication" autocomplete="organization" required>
+            <label for="enquiryEmail">Your email</label><input id="enquiryEmail" name="email" type="email" autocomplete="email" required>
+            <label for="enquiryMessage">What do you have in mind?</label><textarea id="enquiryMessage" name="message" rows="5" placeholder="Tell us about your audience, the cartoons you’re interested in and any deadlines." required></textarea>
+            <button class="button primary" type="submit">Let’s talk cartoons</button>
+            <p class="form-note">Your email app will open with your enquiry ready to send. Prefer to write directly? <a href="mailto:nurk@collect1900.com">nurk@collect1900.com</a></p>
+          </form>
         </div>
-        <p>Email, social links and commission information will be added here.</p>
       </section>
     </main>
 
@@ -89,7 +98,16 @@
       </div>
     </dialog>
 
-    <script src="cartoons-data.js?v=11"></script>
-    <script src="app.js?v=11"></script>
+    <script src="cartoons-data.js?v=12"></script>
+    <script src="app.js?v=12"></script>
+    <script>
+      document.querySelector("#publisherEnquiry").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const data = new FormData(this);
+        const subject = "Publishing enquiry — " + data.get("publication");
+        const body = "Name: " + data.get("name") + "\nPublication: " + data.get("publication") + "\nEmail: " + data.get("email") + "\n\n" + data.get("message");
+        window.location.href = "mailto:nurk@collect1900.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      });
+    </script>
   </body>
 </html>
