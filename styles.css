@@ -610,3 +610,13 @@ h3 {
 .about-copy h3:first-child { margin-top: 0; }
 .about-section .about-copy p { margin: 0 0 18px; }
 .about-copy a { color: var(--accent-dark); text-underline-offset: 3px; }
+
+.contact-copy h3 { margin: 0 0 18px; }
+.contact-section .contact-copy p { margin: 0 0 18px; }
+#publisherEnquiry { display: grid; gap: 10px; margin-top: 28px; }
+#publisherEnquiry label { font-weight: 800; }
+#publisherEnquiry input, #publisherEnquiry textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 2px solid var(--ink); background: #fffdf8; color: var(--ink); font: inherit; }
+#publisherEnquiry textarea { resize: vertical; }
+#publisherEnquiry button { justify-self: start; }
+.contact-section .form-note { font-size: 0.9rem; line-height: 1.5; margin-top: 12px; }
+.contact-copy a { color: var(--accent-dark); }
