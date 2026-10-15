@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
     <meta name="description" content="Portfolio met NURK cartoons, strips en tekeningen.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
   </head>
   <body>
     <header class="site-header">
@@ -55,11 +55,6 @@
           <p class="current-day" id="currentDay"></p>
         </div>
         <div class="date-strip" id="dateStrip" aria-label="Kies publicatiedag"></div>
-        <div class="filters" role="list" aria-label="Filter media">
-          <button class="filter-button active" type="button" data-filter="alles">Alles</button>
-          <button class="filter-button" type="button" data-filter="cartoon">Cartoons</button>
-          <button class="filter-button" type="button" data-filter="video">Video</button>
-        </div>
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
       </section>
 
@@ -96,7 +91,7 @@
       </div>
     </dialog>
 
-    <script src="cartoons-data.js"></script>
-    <script src="app.js"></script>
+    <script src="cartoons-data.js?v=2"></script>
+    <script src="app.js?v=2"></script>
   </body>
 </html>

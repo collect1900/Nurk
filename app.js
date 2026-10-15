@@ -1,7 +1,6 @@
 const cartoons = window.nurkCartoons || [];
 
 const galleryGrid = document.querySelector("#galleryGrid");
-const filterButtons = document.querySelectorAll(".filter-button");
 const dateStrip = document.querySelector("#dateStrip");
 const currentDay = document.querySelector("#currentDay");
 const featureCaption = document.querySelector("#featureCaption");
@@ -11,7 +10,6 @@ const lightboxTitle = document.querySelector("#lightboxTitle");
 const lightboxCategory = document.querySelector("#lightboxCategory");
 const lightboxDescription = document.querySelector("#lightboxDescription");
 const closeButton = document.querySelector(".close-button");
-let activeFilter = "alles";
 let activeDate = "";
 let lightboxItems = [];
 let lightboxIndex = 0;
@@ -39,7 +37,7 @@ function moveCartoon(offset) {
 previousCartoon.addEventListener("click", () => moveCartoon(-1));
 nextCartoon.addEventListener("click", () => moveCartoon(1));
 lightbox.addEventListener("keydown", (event) => {
-  if (event.target.closest("video, input, textarea, select")) return;
+  if (event.target.closest("input, textarea, select")) return;
   if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
     event.preventDefault();
     moveCartoon(event.key === "ArrowLeft" ? -1 : 1);
@@ -98,16 +96,7 @@ function createArtwork(cartoon, sizeClass = "thumb") {
   const art = document.createElement("div");
   art.className = `cartoon-frame ${sizeClass}`;
 
-  if (cartoon.type === "video") {
-    const video = document.createElement("video");
-    video.className = "cartoon-video";
-    video.src = cartoon.image;
-    video.controls = sizeClass === "lightbox-artwork";
-    video.muted = sizeClass !== "lightbox-artwork";
-    video.playsInline = true;
-    video.preload = "metadata";
-    art.append(video);
-  } else if (cartoon.image) {
+  if (cartoon.image) {
     const image = document.createElement("img");
     image.className = "cartoon-image";
     image.src = cartoon.image;
@@ -193,9 +182,7 @@ function renderGallery() {
     ? datedCartoons.filter((cartoon) => cartoon.publishedAt === activeDate)
     : datedCartoons;
 
-  const visible = activeFilter === "alles"
-    ? source
-    : source.filter((cartoon) => cartoon.category === activeFilter);
+  const visible = source;
 
   galleryGrid.replaceChildren(...visible.map((cartoon) => {
     const card = document.createElement("article");
@@ -221,19 +208,11 @@ function renderGallery() {
   if (!visible.length) {
     const emptyState = document.createElement("p");
     emptyState.className = "empty-state";
-    emptyState.textContent = "Geen cartoons gevonden voor deze dag en filter.";
+    emptyState.textContent = "Geen cartoons gevonden voor deze dag.";
     galleryGrid.replaceChildren(emptyState);
   }
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    activeFilter = button.dataset.filter;
-    renderGallery();
-  });
-});
 
 closeButton.addEventListener("click", () => lightbox.close());
 

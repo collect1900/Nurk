@@ -2891,11 +2891,11 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-06-05 dumocrats.jpg"
   },
   {
-    "title": "jubileum 1 jr",
-    "category": "video",
-    "type": "video",
+    "title": "cover",
+    "category": "cartoon",
+    "type": "cartoon",
     "description": "NURK van 26-06-06.",
-    "image": "assets/cartoons/26-06-06 jubileum_1_jr.mp4"
+    "image": "assets/cartoons/26-06-06  cover.jpg"
   },
   {
     "title": "day after 1",
