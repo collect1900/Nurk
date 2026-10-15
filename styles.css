@@ -577,3 +577,8 @@ h3 {
     min-height: 240px;
   }
 }
+
+.season-picker { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+.season-picker label { font-weight: 800; }
+.season-picker select { padding: 10px 36px 10px 12px; min-height: 44px; border: 2px solid var(--ink); color: var(--ink); background: var(--paper); font: inherit; font-weight: 800; }
+.season-picker p { margin: 0; color: var(--muted); }

@@ -11,19 +11,21 @@ const lightboxCategory = document.querySelector("#lightboxCategory");
 const lightboxDescription = document.querySelector("#lightboxDescription");
 const closeButton = document.querySelector(".close-button");
 let activeDate = "";
+let activeSeason = null;
+const seasonSelect = document.querySelector("#seasonSelect");
 let lightboxItems = [];
 let lightboxIndex = 0;
 const lightboxNav = document.createElement("nav");
 lightboxNav.className = "lightbox-navigation";
-lightboxNav.setAttribute("aria-label", "Cartoons van deze dag");
+lightboxNav.setAttribute("aria-label", "Cartoons from this day");
 const previousCartoon = document.createElement("button");
 previousCartoon.type = "button";
-previousCartoon.textContent = "← Vorige";
+previousCartoon.textContent = "← Previous";
 const cartoonPosition = document.createElement("span");
 cartoonPosition.setAttribute("role", "status");
 const nextCartoon = document.createElement("button");
 nextCartoon.type = "button";
-nextCartoon.textContent = "Volgende →";
+nextCartoon.textContent = "Next →";
 lightboxNav.append(previousCartoon, cartoonPosition, nextCartoon);
 lightbox.querySelector(".lightbox-copy").prepend(lightboxNav);
 
@@ -45,6 +47,39 @@ lightbox.addEventListener("keydown", (event) => {
 });
 lightbox.addEventListener("close", () => lightboxArt.replaceChildren());
 
+function getSeason(dateToken) {
+  const date = parseNurKDate(dateToken);
+  const afterAnniversary = date.getMonth() > 5 || (date.getMonth() === 5 && date.getDate() >= 7);
+  return date.getFullYear() - 2025 + (afterAnniversary ? 1 : 0);
+}
+
+function renderSeasons() {
+  const seasons = [...new Set(getAvailableDates().map(getSeason))].filter(n => n >= 1).sort((a, b) => b - a);
+  seasonSelect.replaceChildren(...seasons.map(season => {
+    const option = document.createElement("option");
+    option.value = String(season);
+    option.textContent = `Season ${season}`;
+    option.selected = season === activeSeason;
+    return option;
+  }));
+  updateSeasonRange();
+}
+
+function updateSeasonRange() {
+  const startYear = 2024 + activeSeason;
+  document.querySelector("#seasonRange").textContent = activeSeason === null ? "" : `7 June ${startYear} – 6 June ${startYear + 1}`;
+  document.querySelector("#gallery-title").textContent = activeSeason === null ? "NURK archive" : `Season ${activeSeason}`;
+}
+
+seasonSelect.addEventListener("change", () => {
+  activeSeason = Number(seasonSelect.value);
+  activeDate = getDefaultDate(activeSeason);
+  updateSeasonRange();
+  renderDateStrip();
+  renderFeature();
+  renderGallery();
+});
+
 function getDateFromImagePath(imagePath) {
   const fileName = imagePath.split("/").pop() || "";
   const dateToken = fileName.slice(0, 8);
@@ -61,7 +96,7 @@ function formatDateToken(dateToken) {
     return "";
   }
 
-  return new Intl.DateTimeFormat("nl-NL", {
+  return new Intl.DateTimeFormat("en-GB", {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -78,15 +113,15 @@ function enrichCartoons(items) {
 
 const datedCartoons = enrichCartoons(cartoons);
 
-function getAvailableDates() {
+function getAvailableDates(season = null) {
   return [...new Set(datedCartoons
     .map((cartoon) => cartoon.publishedAt)
-    .filter(Boolean))]
+    .filter((date) => date && (season === null || getSeason(date) === season)))]
     .sort((left, right) => parseNurKDate(right) - parseNurKDate(left));
 }
 
-function getDefaultDate() {
-  const dates = getAvailableDates();
+function getDefaultDate(season = null) {
+  const dates = getAvailableDates(season);
   const today = new Date();
   today.setHours(23, 59, 59, 999);
   return dates.find((dateToken) => parseNurKDate(dateToken) <= today) || dates[0] || "";
@@ -106,7 +141,7 @@ function createArtwork(cartoon, sizeClass = "thumb") {
     art.classList.add("placeholder-art");
     art.style.background = cartoon.color;
     art.style.setProperty("--tilt", cartoon.tilt);
-    art.innerHTML = `<span class="placeholder-label" style="background:${cartoon.accent}">beeld volgt</span>`;
+    art.innerHTML = `<span class="placeholder-label" style="background:${cartoon.accent}">image coming soon</span>`;
   }
 
   return art;
@@ -128,17 +163,17 @@ function renderLightbox() {
     .join(" - ");
   lightboxDescription.textContent = cartoon.description;
   lightboxNav.hidden = lightboxItems.length < 2;
-  cartoonPosition.textContent = `${lightboxIndex + 1} van ${lightboxItems.length}`;
+  cartoonPosition.textContent = `${lightboxIndex + 1} of ${lightboxItems.length}`;
   previousCartoon.setAttribute("aria-disabled", String(lightboxIndex === 0));
   nextCartoon.setAttribute("aria-disabled", String(lightboxIndex === lightboxItems.length - 1));
 }
 
 function renderDateStrip() {
-  const dates = getAvailableDates();
+  const dates = getAvailableDates(activeSeason);
 
   if (!dates.length) {
     dateStrip.hidden = true;
-    currentDay.textContent = "Nog geen gedateerde NURK-bestanden gevonden";
+    currentDay.textContent = "No dated NURK cartoons found";
     return;
   }
 
@@ -162,7 +197,7 @@ function renderDateStrip() {
     block: "nearest",
     inline: "center"
   });
-  currentDay.textContent = `Getoond: ${formatDateToken(activeDate)}`;
+  currentDay.textContent = `Showing: ${formatDateToken(activeDate)}`;
 }
 
 function renderFeature() {
@@ -190,7 +225,7 @@ function renderGallery() {
 
     const trigger = document.createElement("button");
     trigger.type = "button";
-    trigger.setAttribute("aria-label", `${cartoon.title} openen`);
+    trigger.setAttribute("aria-label", `Open ${cartoon.title}`);
     trigger.append(createArtwork(cartoon));
     trigger.addEventListener("click", () => openLightbox(cartoon));
 
@@ -208,7 +243,7 @@ function renderGallery() {
   if (!visible.length) {
     const emptyState = document.createElement("p");
     emptyState.className = "empty-state";
-    emptyState.textContent = "Geen cartoons gevonden voor deze dag.";
+    emptyState.textContent = "No cartoons found for this day.";
     galleryGrid.replaceChildren(emptyState);
   }
 }
@@ -223,6 +258,8 @@ lightbox.addEventListener("click", (event) => {
 });
 
 activeDate = getDefaultDate();
+activeSeason = activeDate ? getSeason(activeDate) : null;
+renderSeasons();
 renderDateStrip();
 renderFeature();
 renderGallery();

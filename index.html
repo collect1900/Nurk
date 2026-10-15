@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
-    <meta name="description" content="Portfolio met NURK cartoons, strips en tekeningen.">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <meta name="description" content="A portfolio of NURK cartoons, comic strips and drawings.">
+    <link rel="stylesheet" href="styles.css?v=3">
   </head>
   <body>
     <header class="site-header">
@@ -13,9 +13,9 @@
         <span class="brand-mark">N</span>
         <span>NURK Cartoons</span>
       </a>
-      <nav aria-label="Hoofdnavigatie">
-        <a href="#galerie">Galerie</a>
-        <a href="#over">Over</a>
+      <nav aria-label="Main navigation">
+        <a href="#galerie">Gallery</a>
+        <a href="#over">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -23,66 +23,63 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Satire, observatie en inkt</p>
+          <p class="eyebrow">Satire, observation and ink</p>
           <h1 id="hero-title">NURK cartoons</h1>
           <p class="intro">
-            Een portfolio voor losse cartoons, reeksen en publiceerbare tekeningen.
-            Bezoekers landen automatisch op de nieuwste NURK-dag.
+            A portfolio of cartoons, series and drawings for publication.
+            Explore the latest NURK cartoons, or browse earlier seasons.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#galerie">Bekijk galerie</a>
-            <a class="button secondary" href="#contact">Neem contact op</a>
+            <a class="button primary" href="#galerie">Browse the gallery</a>
+            <a class="button secondary" href="#contact">Get in touch</a>
           </div>
         </div>
-        <figure class="feature-panel" aria-label="Uitgelichte cartoon">
-          <div class="cartoon-frame feature-drawing" id="featureArt" role="img" aria-label="Uitgelichte NURK cartoon">
+        <figure class="feature-panel" aria-label="Featured cartoon">
+          <div class="cartoon-frame feature-drawing" id="featureArt" role="img" aria-label="Featured NURK cartoon">
             <span class="speech one">NURK</span>
             <span class="speech two">...</span>
             <span class="ink-line line-a"></span>
             <span class="ink-line line-b"></span>
             <span class="ink-line line-c"></span>
           </div>
-          <figcaption id="featureCaption">Uitgelicht werk</figcaption>
+          <figcaption id="featureCaption">Featured work</figcaption>
         </figure>
       </section>
 
       <section class="gallery-section" id="galerie" aria-labelledby="gallery-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Galerie</p>
-            <h2 id="gallery-title">Laatste NURK</h2>
+            <p class="eyebrow">Gallery</p>
+            <h2 id="gallery-title">Latest NURK</h2>
           </div>
           <p class="current-day" id="currentDay"></p>
         </div>
-        <div class="date-strip" id="dateStrip" aria-label="Kies publicatiedag"></div>
+        <div class="season-picker"><label for="seasonSelect">Browse by season</label><select id="seasonSelect"></select><p id="seasonRange"></p></div>
+        <div class="date-strip" id="dateStrip" aria-label="Choose a publication date"></div>
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
       </section>
 
       <section class="about-section" id="over" aria-labelledby="about-title">
         <div>
-          <p class="eyebrow">Over NURK</p>
-          <h2 id="about-title">Scherp kijken, kort tekenen</h2>
+          <p class="eyebrow">About NURK</p>
+          <h2 id="about-title">Sharp observations, simple lines</h2>
         </div>
         <p>
-          Deze portfolio is ingericht voor cartoons die direct te bekijken zijn:
-          grote previews, heldere titels en ruimte voor reeksen. Vervang de
-          tijdelijke beeldvakken door je eigen bestanden in de map
-          <strong>assets/cartoons</strong>. De eerste 8 tekens van de bestandsnaam
-          bepalen de publicatiedag, bijvoorbeeld <strong>26-07-15-cartoon.jpg</strong>.
+          NURK brings together daily cartoons and longer series, with large previews and an archive organised by season. Each season runs from 7 June to 6 June the following year.
         </p>
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Voor publicaties, opdrachten en exposities</h2>
+          <h2 id="contact-title">For publications, commissions and exhibitions</h2>
         </div>
-        <p>Voeg hier je e-mailadres, socials of opdrachtinformatie toe.</p>
+        <p>Email, social links and commission information will be added here.</p>
       </section>
     </main>
 
     <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
-      <button class="close-button" type="button" aria-label="Sluiten">x</button>
+      <button class="close-button" type="button" aria-label="Close">x</button>
       <div class="lightbox-art" id="lightboxArt"></div>
       <div class="lightbox-copy">
         <p class="eyebrow" id="lightboxCategory"></p>
@@ -91,7 +88,7 @@
       </div>
     </dialog>
 
-    <script src="cartoons-data.js?v=2"></script>
-    <script src="app.js?v=2"></script>
+    <script src="cartoons-data.js?v=3"></script>
+    <script src="app.js?v=3"></script>
   </body>
 </html>
