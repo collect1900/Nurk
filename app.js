@@ -201,7 +201,8 @@ function renderDateStrip() {
 }
 
 function renderFeature() {
-  const featured = datedCartoons.find((cartoon) => cartoon.publishedAt === activeDate) || datedCartoons[0];
+  const latestDate = getDefaultDate();
+  const featured = datedCartoons.find((cartoon) => cartoon.publishedAt === latestDate);
 
   if (!featured) {
     return;
