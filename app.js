@@ -184,7 +184,13 @@ function renderDateStrip() {
     const button = document.createElement("button");
     button.className = `date-button${dateToken === activeDate ? " active" : ""}`;
     button.type = "button";
-    button.textContent = formatDateToken(dateToken);
+    const weekday = document.createElement("span");
+    weekday.className = "date-weekday";
+    weekday.textContent = new Intl.DateTimeFormat("en-GB", { weekday: "long" }).format(parseNurKDate(dateToken));
+    const date = document.createElement("span");
+    date.className = "date-calendar";
+    date.textContent = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric" }).format(parseNurKDate(dateToken));
+    button.append(weekday, date);
     button.addEventListener("click", () => {
       activeDate = dateToken;
       renderDateStrip();
