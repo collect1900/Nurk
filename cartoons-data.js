@@ -4135,5 +4135,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-15.",
     "image": "assets/cartoons/26-10-15 press secretary.jpg"
+  },
+  {
+    "title": "Wilson",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-16.",
+    "image": "assets/cartoons/26-10-16 Wilson.jpg"
   }
 ];
