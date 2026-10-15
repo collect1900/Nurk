@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
     <meta name="description" content="A portfolio of NURK cartoons, comic strips and drawings.">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
   </head>
   <body>
     <header class="site-header">
@@ -14,7 +14,7 @@
         <span>NURK Cartoons</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#galerie">Gallery</a>
+        <a href="#galerie">The Daily Nurk</a>
         <a href="#over">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -37,6 +37,10 @@
           </div>
           <figcaption id="featureCaption">Featured work</figcaption>
         </figure>
+
+      </section>
+
+      <section class="gallery-section" id="galerie" aria-labelledby="daily-nurk-title">
         <div class="daily-nurk" aria-labelledby="daily-nurk-title">
           <h2 id="daily-nurk-title">The Daily Nurk</h2>
           <h3>The Challenge</h3>
@@ -44,16 +48,7 @@
           <p>Up until now, things are going smooth. <span id="publicationCount">494</span> cartoons and still going funny (I hope).</p>
           <p>You can follow me on Instagram (<a href="https://www.instagram.com/the_daily_nurk/" target="_blank" rel="noopener noreferrer">The_daily_Nurk</a>).</p>
         </div>
-      </section>
-
-      <section class="gallery-section" id="galerie" aria-label="Cartoon gallery">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Gallery</p>
-            <h2 id="gallery-title" hidden>Latest NURK</h2>
-          </div>
-          <p class="current-day" id="currentDay"></p>
-        </div>
+        <h3 class="gallery-subheading">Gallery</h3><p id="currentDay" hidden></p><h2 id="gallery-title" hidden></h2>
         <div class="season-picker"><label for="seasonSelect">Browse by season</label><select id="seasonSelect"></select><p id="seasonRange" hidden></p></div>
         <div class="date-strip" id="dateStrip" aria-label="Choose a publication date"></div>
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
@@ -88,7 +83,7 @@
       </div>
     </dialog>
 
-    <script src="cartoons-data.js?v=7"></script>
-    <script src="app.js?v=7"></script>
+    <script src="cartoons-data.js?v=8"></script>
+    <script src="app.js?v=8"></script>
   </body>
 </html>
