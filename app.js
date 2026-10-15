@@ -112,6 +112,8 @@ function enrichCartoons(items) {
 }
 
 const datedCartoons = enrichCartoons(cartoons);
+const publicationCount = document.querySelector("#publicationCount");
+if (publicationCount) publicationCount.textContent = new Intl.NumberFormat("en-GB").format(getAvailableDates().length);
 
 function getAvailableDates(season = null) {
   return [...new Set(datedCartoons
