@@ -234,10 +234,7 @@ function renderGallery() {
 
     const meta = document.createElement("div");
     meta.className = "card-meta";
-    meta.innerHTML = `
-      <h3>${cartoon.title}</h3>
-      <span class="category">${cartoon.category}</span>
-    `;
+    meta.textContent = `${cartoon.title} - ${formatDateToken(cartoon.publishedAt)}`;
 
     card.append(trigger, meta);
     return card;
