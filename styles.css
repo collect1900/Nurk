@@ -586,3 +586,14 @@ h3 {
 #hero-title { display: grid; width: max-content; max-width: 100%; }
 #hero-title span { display: block; white-space: nowrap; overflow-wrap: normal; }
 .title-cartoons { font-size: 0.5236em; line-height: 1.1; margin-top: 0.12em; }
+
+.hero { display: flex; flex-direction: column; align-items: stretch; gap: 32px; min-height: 0; max-width: 900px; margin-inline: auto; }
+.hero-copy { max-width: none; }
+.hero .feature-panel { max-width: none; transform: none; }
+.hero .feature-drawing { aspect-ratio: auto; min-height: 0; }
+.hero .feature-drawing .cartoon-image { display: block; height: auto; min-height: 0; }
+.daily-nurk { margin-top: 24px; }
+.daily-nurk h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+.daily-nurk h3 { margin-top: 24px; }
+.daily-nurk p { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.65; }
+.daily-nurk a { color: var(--accent-dark); text-underline-offset: 3px; }
