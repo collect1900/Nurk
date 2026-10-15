@@ -601,3 +601,7 @@ h3 {
 .gallery-section .daily-nurk { margin-top: 0; margin-bottom: 40px; max-width: 900px; }
 .gallery-subheading { color: var(--ink); margin: 0 0 24px; }
 .cartoon-card .card-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 0.9rem; font-weight: 800; text-align: right; }
+
+.date-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 10px; }
+.date-weekday, .date-calendar { display: block; white-space: nowrap; }
+@media (max-width: 560px) { .date-strip { gap: 6px; } .date-button { padding: 8px; font-size: 0.8rem; } }
