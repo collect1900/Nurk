@@ -605,3 +605,8 @@ h3 {
 .date-button { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 10px; }
 .date-weekday, .date-calendar { display: block; white-space: nowrap; }
 @media (max-width: 560px) { .date-strip { gap: 6px; } .date-button { padding: 8px; font-size: 0.8rem; } }
+
+.about-copy h3 { margin: 28px 0 12px; }
+.about-copy h3:first-child { margin-top: 0; }
+.about-section .about-copy p { margin: 0 0 18px; }
+.about-copy a { color: var(--accent-dark); text-underline-offset: 3px; }
