@@ -491,6 +491,50 @@ h3 {
   border-top: 3px solid var(--ink);
 }
 
+.lightbox-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.lightbox-navigation[hidden] { display: none; }
+
+.lightbox-navigation button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lightbox-navigation button[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.lightbox {
+  max-height: calc(100dvh - 28px);
+  overflow-y: auto;
+}
+
+.lightbox-artwork {
+  min-height: 0;
+  box-shadow: none;
+  border: 0;
+}
+
+.lightbox-artwork img,
+.lightbox-artwork video {
+  display: block;
+  max-height: 62dvh;
+}
+
 .lightbox-copy p:last-child {
   margin-bottom: 0;
   color: var(--muted);

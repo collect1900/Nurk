@@ -13,6 +13,39 @@ const lightboxDescription = document.querySelector("#lightboxDescription");
 const closeButton = document.querySelector(".close-button");
 let activeFilter = "alles";
 let activeDate = "";
+let lightboxItems = [];
+let lightboxIndex = 0;
+const lightboxNav = document.createElement("nav");
+lightboxNav.className = "lightbox-navigation";
+lightboxNav.setAttribute("aria-label", "Cartoons van deze dag");
+const previousCartoon = document.createElement("button");
+previousCartoon.type = "button";
+previousCartoon.textContent = "← Vorige";
+const cartoonPosition = document.createElement("span");
+cartoonPosition.setAttribute("role", "status");
+const nextCartoon = document.createElement("button");
+nextCartoon.type = "button";
+nextCartoon.textContent = "Volgende →";
+lightboxNav.append(previousCartoon, cartoonPosition, nextCartoon);
+lightbox.querySelector(".lightbox-copy").prepend(lightboxNav);
+
+function moveCartoon(offset) {
+  const next = lightboxIndex + offset;
+  if (next < 0 || next >= lightboxItems.length) return;
+  lightboxIndex = next;
+  renderLightbox();
+}
+
+previousCartoon.addEventListener("click", () => moveCartoon(-1));
+nextCartoon.addEventListener("click", () => moveCartoon(1));
+lightbox.addEventListener("keydown", (event) => {
+  if (event.target.closest("video, input, textarea, select")) return;
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    moveCartoon(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+lightbox.addEventListener("close", () => lightboxArt.replaceChildren());
 
 function getDateFromImagePath(imagePath) {
   const fileName = imagePath.split("/").pop() || "";
@@ -91,13 +124,24 @@ function createArtwork(cartoon, sizeClass = "thumb") {
 }
 
 function openLightbox(cartoon) {
+  lightboxItems = datedCartoons.filter((item) => item.publishedAt === cartoon.publishedAt);
+  lightboxIndex = lightboxItems.indexOf(cartoon);
+  renderLightbox();
+  lightbox.showModal();
+}
+
+function renderLightbox() {
+  const cartoon = lightboxItems[lightboxIndex];
   lightboxArt.replaceChildren(createArtwork(cartoon, "lightbox-artwork"));
   lightboxTitle.textContent = cartoon.title;
   lightboxCategory.textContent = [cartoon.category, formatDateToken(cartoon.publishedAt)]
     .filter(Boolean)
     .join(" - ");
   lightboxDescription.textContent = cartoon.description;
-  lightbox.showModal();
+  lightboxNav.hidden = lightboxItems.length < 2;
+  cartoonPosition.textContent = `${lightboxIndex + 1} van ${lightboxItems.length}`;
+  previousCartoon.setAttribute("aria-disabled", String(lightboxIndex === 0));
+  nextCartoon.setAttribute("aria-disabled", String(lightboxIndex === lightboxItems.length - 1));
 }
 
 function renderDateStrip() {
