@@ -597,3 +597,7 @@ h3 {
 .daily-nurk h3 { margin-top: 24px; }
 .daily-nurk p { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.65; }
 .daily-nurk a { color: var(--accent-dark); text-underline-offset: 3px; }
+
+.gallery-section .daily-nurk { margin-top: 0; margin-bottom: 40px; max-width: 900px; }
+.gallery-subheading { color: var(--ink); margin: 0 0 24px; }
+.cartoon-card .card-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 0.9rem; font-weight: 800; text-align: right; }
