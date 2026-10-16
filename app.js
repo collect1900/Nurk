@@ -113,7 +113,15 @@ function enrichCartoons(items) {
 
 const datedCartoons = enrichCartoons(cartoons);
 const publicationCount = document.querySelector("#publicationCount");
-if (publicationCount) publicationCount.textContent = new Intl.NumberFormat("en-GB").format(getAvailableDates().length);
+if (publicationCount) publicationCount.textContent = new Intl.NumberFormat("en-GB").format(getPublicationCount());
+
+function getPublicationCount() {
+  const dates = getAvailableDates();
+  if (!dates.length) return 0;
+  const first = parseNurKDate(dates[dates.length - 1]);
+  const latest = parseNurKDate(getDefaultDate());
+  return Math.round((Date.UTC(latest.getFullYear(), latest.getMonth(), latest.getDate()) - Date.UTC(first.getFullYear(), first.getMonth(), first.getDate())) / 86400000) + 1;
+}
 
 function getAvailableDates(season = null) {
   return [...new Set(datedCartoons
