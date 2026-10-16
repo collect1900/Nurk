@@ -4142,5 +4142,19 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-16.",
     "image": "assets/cartoons/26-10-16 Wilson.jpg"
+  },
+  {
+    "title": "Tradwife",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 25-12-26.",
+    "image": "assets/cartoons/25-12-26 Tradwife.jpeg"
+  },
+  {
+    "title": "Swans",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-01-31.",
+    "image": "assets/cartoons/26-01-31 Swans.jpeg"
   }
 ];
