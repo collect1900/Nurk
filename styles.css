@@ -620,3 +620,11 @@ h3 {
 #publisherEnquiry button { justify-self: start; }
 .contact-section .form-note { font-size: 0.9rem; line-height: 1.5; margin-top: 12px; }
 .contact-copy a { color: var(--accent-dark); }
+
+.gallery-section .daily-nurk { display: grid; grid-template-columns: minmax(220px, 0.6fr) minmax(0, 1fr); gap: clamp(20px, 5vw, 70px); max-width: none; margin-bottom: 52px; }
+.daily-nurk h2 { font-size: clamp(2rem, 5vw, 4.8rem); line-height: 0.95; }
+.daily-copy h3 { margin: 0 0 18px; }
+.daily-copy p, .gallery-invitation { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.55; }
+.daily-copy p { margin: 0 0 18px; }
+.gallery-invitation { max-width: 900px; margin: -6px 0 28px; }
+@media (max-width: 880px) { .gallery-section .daily-nurk { grid-template-columns: 1fr; } }
