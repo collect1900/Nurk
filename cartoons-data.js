@@ -1456,13 +1456,6 @@ window.nurkCartoons = [
     "image": "assets/cartoons/25-12-16_man_cave.jpg"
   },
   {
-    "title": "tradwife",
-    "category": "cartoon",
-    "type": "cartoon",
-    "description": "NURK for 25-12-16.",
-    "image": "assets/cartoons/25-12-16_tradwife.jpg"
-  },
-  {
     "title": "trump stadium",
     "category": "cartoon",
     "type": "cartoon",
