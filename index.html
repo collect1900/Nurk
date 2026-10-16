@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
     <meta name="description" content="A portfolio of NURK cartoons, comic strips and drawings.">
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=15">
   </head>
   <body>
     <header class="site-header">
@@ -45,10 +45,10 @@
           <div><h2 id="daily-nurk-title">The Daily Nurk</h2></div><div class="daily-copy">
           <h3>The Challenge</h3>
           <p>Would it be possible to publish a cartoon every day? That was the challenge at the idea behind "The Daily Nurk".</p>
-          <p>Up until now, things are going smooth. <span id="publicationCount">495</span> cartoons and still going funny (I hope).</p>
+          <p>Up until now, things are going smooth. <span id="publicationCount">497</span> cartoons and still going funny (I hope).</p>
           <p>You can follow me on Instagram (<a href="https://www.instagram.com/the_daily_nurk/" target="_blank" rel="noopener noreferrer">The_daily_Nurk</a>).</p>
         </div></div>
-        <h3 class="gallery-subheading">Gallery</h3><p class="gallery-invitation">There’s plenty more to smile about. Travel back through the NURK archive to rediscover past headlines, timeless observations and unexpected twists. Pick a season and a date below — your next favourite cartoon might be waiting in the past.</p><p id="currentDay" hidden></p><h2 id="gallery-title" hidden></h2>
+        <div class="gallery-intro"><h3 class="gallery-subheading">Gallery</h3><p class="gallery-invitation">There’s plenty more to smile about. Travel back through the NURK archive to rediscover past headlines, timeless observations and unexpected twists. Pick a season and a date below — your next favourite cartoon might be waiting in the past.</p></div><p id="currentDay" hidden></p><h2 id="gallery-title" hidden></h2>
         <div class="season-picker"><label for="seasonSelect">Browse by season</label><select id="seasonSelect"></select><p id="seasonRange" hidden></p></div>
         <div class="date-strip" id="dateStrip" aria-label="Choose a publication date"></div>
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
@@ -98,8 +98,8 @@
       </div>
     </dialog>
 
-    <script src="cartoons-data.js?v=14"></script>
-    <script src="app.js?v=14"></script>
+    <script src="cartoons-data.js?v=15"></script>
+    <script src="app.js?v=15"></script>
     <script>
       document.querySelector("#publisherEnquiry").addEventListener("submit", function(event) {
         event.preventDefault();
