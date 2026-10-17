@@ -137,7 +137,7 @@ galleryGrid.before(carousel);
 carousel.append(galleryPrevious, galleryGrid, galleryNext);
 carousel.after(galleryPosition);
 function getGallerySequence() {
-  return [...datedCartoons].filter(item => item.publishedAt).sort((a, b) => parseNurKDate(a.publishedAt) - parseNurKDate(b.publishedAt));
+  return [...datedCartoons].filter(item => item.publishedAt).sort((a, b) => parseNurKDate(b.publishedAt) - parseNurKDate(a.publishedAt));
 }
 function moveGallery(offset) {
   const day = datedCartoons.filter(item => item.publishedAt === activeDate);
