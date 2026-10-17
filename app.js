@@ -313,7 +313,7 @@ function renderGallery() {
   const position = sequence.indexOf(visible[0]);
   galleryPrevious.setAttribute("aria-disabled", String(getAvailableDates().indexOf(activeDate) <= 0));
   galleryNext.setAttribute("aria-disabled", String(getAvailableDates().indexOf(activeDate) >= getAvailableDates().length - 1));
-  galleryPosition.textContent = source.length > 1 ? source.length + " cartoons on this day" : "Swipe or use the arrows to explore";
+  galleryPosition.textContent = source.length > 1 ? source.length + " cartoons on this day" : "";
 
   galleryGrid.replaceChildren(...visible.map((cartoon) => {
     const card = document.createElement("article");
