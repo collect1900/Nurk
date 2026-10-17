@@ -74,6 +74,7 @@ function updateSeasonRange() {
 seasonSelect.addEventListener("change", () => {
   activeSeason = Number(seasonSelect.value);
   activeDate = getDefaultDate(activeSeason);
+  galleryItemIndex = 0;
   updateSeasonRange();
   renderDateStrip();
   renderFeature();
@@ -112,6 +113,70 @@ function enrichCartoons(items) {
 }
 
 const datedCartoons = enrichCartoons(cartoons);
+
+let galleryItemIndex = 0;
+const carousel = document.createElement("div");
+carousel.className = "gallery-carousel";
+carousel.setAttribute("role", "region");
+carousel.setAttribute("aria-label", "Browse NURK cartoons");
+carousel.tabIndex = 0;
+const galleryPrevious = document.createElement("button");
+galleryPrevious.type = "button";
+galleryPrevious.className = "gallery-arrow";
+galleryPrevious.textContent = "‹";
+galleryPrevious.setAttribute("aria-label", "Previous cartoon");
+const galleryNext = document.createElement("button");
+galleryNext.type = "button";
+galleryNext.className = "gallery-arrow";
+galleryNext.textContent = "›";
+galleryNext.setAttribute("aria-label", "Next cartoon");
+const galleryPosition = document.createElement("p");
+galleryPosition.className = "gallery-position";
+galleryPosition.setAttribute("role", "status");
+galleryGrid.before(carousel);
+carousel.append(galleryPrevious, galleryGrid, galleryNext);
+carousel.after(galleryPosition);
+function getGallerySequence() {
+  return [...datedCartoons].filter(item => item.publishedAt).sort((a, b) => parseNurKDate(a.publishedAt) - parseNurKDate(b.publishedAt));
+}
+function moveGallery(offset) {
+  const day = datedCartoons.filter(item => item.publishedAt === activeDate);
+  const sequence = getGallerySequence();
+  const current = sequence.indexOf(day[galleryItemIndex]);
+  const target = sequence[current + offset];
+  if (current < 0 || !target) return;
+  activeDate = target.publishedAt;
+  activeSeason = getSeason(activeDate);
+  galleryItemIndex = datedCartoons.filter(item => item.publishedAt === activeDate).indexOf(target);
+  renderSeasons(); renderDateStrip(); renderGallery();
+}
+galleryPrevious.addEventListener("click", () => moveGallery(-1));
+galleryNext.addEventListener("click", () => moveGallery(1));
+carousel.addEventListener("keydown", event => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault(); moveGallery(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+let swipeStart = null;
+let suppressGalleryClickUntil = 0;
+galleryGrid.addEventListener("pointerdown", event => {
+  if (!event.isPrimary || (event.pointerType === "mouse" && event.button !== 0)) return;
+  swipeStart = { x: event.clientX, y: event.clientY };
+});
+galleryGrid.addEventListener("pointercancel", () => { swipeStart = null; });
+galleryGrid.addEventListener("pointerup", event => {
+  if (!swipeStart) return;
+  const dx = event.clientX - swipeStart.x;
+  const dy = event.clientY - swipeStart.y;
+  swipeStart = null;
+  if (Math.abs(dx) >= 45 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+    suppressGalleryClickUntil = Date.now() + 400; moveGallery(dx < 0 ? 1 : -1);
+  }
+});
+galleryGrid.addEventListener("click", event => {
+  if (Date.now() < suppressGalleryClickUntil) { event.preventDefault(); event.stopImmediatePropagation(); }
+}, true);
+
 const publicationCount = document.querySelector("#publicationCount");
 if (publicationCount) publicationCount.textContent = new Intl.NumberFormat("en-GB").format(getPublicationCount());
 
@@ -151,6 +216,7 @@ function createArtwork(cartoon, sizeClass = "thumb") {
   if (cartoon.image) {
     const image = document.createElement("img");
     image.className = "cartoon-image";
+    image.draggable = false;
     image.src = cartoon.image;
     image.alt = cartoon.title;
     art.append(image);
@@ -208,6 +274,7 @@ function renderDateStrip() {
     button.append(weekday, date);
     button.addEventListener("click", () => {
       activeDate = dateToken;
+      galleryItemIndex = 0;
       renderDateStrip();
       renderFeature();
       renderGallery();
@@ -241,7 +308,13 @@ function renderGallery() {
     ? datedCartoons.filter((cartoon) => cartoon.publishedAt === activeDate)
     : datedCartoons;
 
-  const visible = source;
+  galleryItemIndex = Math.min(galleryItemIndex, Math.max(0, source.length - 1));
+  const visible = source.slice(galleryItemIndex, galleryItemIndex + 1);
+  const sequence = getGallerySequence();
+  const position = sequence.indexOf(visible[0]);
+  galleryPrevious.setAttribute("aria-disabled", String(position <= 0));
+  galleryNext.setAttribute("aria-disabled", String(position < 0 || position >= sequence.length - 1));
+  galleryPosition.textContent = source.length > 1 ? (galleryItemIndex + 1) + " of " + source.length + " cartoons on this day" : "Swipe or use the arrows to explore";
 
   galleryGrid.replaceChildren(...visible.map((cartoon) => {
     const card = document.createElement("article");
