@@ -647,3 +647,5 @@ h3 {
 .gallery-carousel .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
 .gallery-carousel .gallery-grid:has(.cartoon-card:only-child) { max-width: 760px; width: 100%; justify-self: center; }
 @media (max-width: 560px) { .gallery-carousel { grid-template-columns: 36px minmax(0, 1fr) 36px; } .gallery-carousel .gallery-grid { grid-template-columns: 1fr; } }
+
+.daily-illustration { display: block; width: 100%; max-width: 480px; height: auto; margin-top: 28px; border-radius: 8px; }
