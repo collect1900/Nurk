@@ -633,3 +633,12 @@ h3 {
 .gallery-intro > * { grid-column: 2; }
 .gallery-intro .gallery-invitation { max-width: none; }
 @media (max-width: 880px) { .gallery-intro { grid-template-columns: 1fr; } .gallery-intro > * { grid-column: 1; } }
+
+.gallery-carousel { display: grid; grid-template-columns: 48px minmax(0, 760px) 48px; justify-content: center; align-items: center; gap: 20px; }
+.gallery-carousel .gallery-grid { display: block; min-width: 0; touch-action: pan-y pinch-zoom; }
+.gallery-carousel .thumb { aspect-ratio: auto; min-height: 0; }
+.gallery-carousel .cartoon-image { display: block; height: auto; min-height: 0; max-height: 75vh; user-select: none; -webkit-user-drag: none; }
+.gallery-arrow { width: 48px; height: 48px; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); font: inherit; font-size: 2.5rem; line-height: 1; cursor: pointer; }
+.gallery-arrow[aria-disabled="true"] { opacity: 0.35; cursor: default; }
+.gallery-position { text-align: center; color: var(--muted); font-weight: 700; font-size: 0.9rem; margin: 20px 0 0; }
+@media (max-width: 560px) { .gallery-carousel { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; } .gallery-arrow { width: 36px; height: 44px; font-size: 2rem; } }
