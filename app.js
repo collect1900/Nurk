@@ -130,6 +130,13 @@ function getAvailableDates(season = null) {
     .sort((left, right) => parseNurKDate(right) - parseNurKDate(left));
 }
 
+function getInitialGalleryDate() {
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  yesterday.setHours(23, 59, 59, 999);
+  return getAvailableDates().find(date => parseNurKDate(date) <= yesterday) || getDefaultDate();
+}
+
 function getDefaultDate(season = null) {
   const dates = getAvailableDates(season);
   const today = new Date();
@@ -271,7 +278,7 @@ lightbox.addEventListener("click", (event) => {
   }
 });
 
-activeDate = getDefaultDate();
+activeDate = getInitialGalleryDate();
 activeSeason = activeDate ? getSeason(activeDate) : null;
 renderSeasons();
 renderDateStrip();
