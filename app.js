@@ -140,14 +140,13 @@ function getGallerySequence() {
   return [...datedCartoons].filter(item => item.publishedAt).sort((a, b) => parseNurKDate(b.publishedAt) - parseNurKDate(a.publishedAt));
 }
 function moveGallery(offset) {
-  const day = datedCartoons.filter(item => item.publishedAt === activeDate);
-  const sequence = getGallerySequence();
-  const current = sequence.indexOf(day[galleryItemIndex]);
-  const target = sequence[current + offset];
+  const dates = getAvailableDates();
+  const current = dates.indexOf(activeDate);
+  const target = dates[current + offset];
   if (current < 0 || !target) return;
-  activeDate = target.publishedAt;
+  activeDate = target;
   activeSeason = getSeason(activeDate);
-  galleryItemIndex = datedCartoons.filter(item => item.publishedAt === activeDate).indexOf(target);
+  galleryItemIndex = 0;
   renderSeasons(); renderDateStrip(); renderGallery();
 }
 galleryPrevious.addEventListener("click", () => moveGallery(-1));
@@ -309,12 +308,12 @@ function renderGallery() {
     : datedCartoons;
 
   galleryItemIndex = Math.min(galleryItemIndex, Math.max(0, source.length - 1));
-  const visible = source.slice(galleryItemIndex, galleryItemIndex + 1);
+  const visible = source;
   const sequence = getGallerySequence();
   const position = sequence.indexOf(visible[0]);
-  galleryPrevious.setAttribute("aria-disabled", String(position <= 0));
-  galleryNext.setAttribute("aria-disabled", String(position < 0 || position >= sequence.length - 1));
-  galleryPosition.textContent = source.length > 1 ? (galleryItemIndex + 1) + " of " + source.length + " cartoons on this day" : "Swipe or use the arrows to explore";
+  galleryPrevious.setAttribute("aria-disabled", String(getAvailableDates().indexOf(activeDate) <= 0));
+  galleryNext.setAttribute("aria-disabled", String(getAvailableDates().indexOf(activeDate) >= getAvailableDates().length - 1));
+  galleryPosition.textContent = source.length > 1 ? source.length + " cartoons on this day" : "Swipe or use the arrows to explore";
 
   galleryGrid.replaceChildren(...visible.map((cartoon) => {
     const card = document.createElement("article");
