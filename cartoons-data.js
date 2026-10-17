@@ -4156,5 +4156,19 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-17.",
     "image": "assets/cartoons/26-10-17 Box.jpg"
+  },
+  {
+    "title": "Twisting words",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-18.",
+    "image": "assets/cartoons/26-10-18 Twisting words.jpg"
+  },
+  {
+    "title": "500th cartoon",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-19.",
+    "image": "assets/cartoons/26-10-19 500th cartoon.jpg"
   }
 ];
