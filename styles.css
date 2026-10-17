@@ -649,3 +649,6 @@ h3 {
 @media (max-width: 560px) { .gallery-carousel { grid-template-columns: 36px minmax(0, 1fr) 36px; } .gallery-carousel .gallery-grid { grid-template-columns: 1fr; } }
 
 .daily-illustration { display: block; width: 100%; max-width: 480px; height: auto; margin-top: 28px; border-radius: 8px; }
+
+.daily-copy .gallery-intro { display: block; margin-top: 28px; }
+.gallery-section .daily-nurk { margin-bottom: 28px; }
