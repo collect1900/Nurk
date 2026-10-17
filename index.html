@@ -74,13 +74,14 @@
           <h3>Give your readers something to smile about.</h3>
           <p>A sharp observation. An unexpected twist. A cartoon that makes readers stop, smile and share. Bring the NURK perspective to your newspaper, magazine, book or digital publication.</p>
           <p>Looking to license a cartoon, commission an original or explore a regular feature? Tell us about your publication and what you have in mind. We’d love to discuss how NURK could fit your pages.</p>
-          <form id="publisherEnquiry">
+          <form id="publisherEnquiry" action="https://formsubmit.co/nurk@collect1900.com" method="POST">
+            <input type="hidden" name="_subject" value="New NURK publishing enquiry"><input type="hidden" name="_template" value="table">
             <label for="enquiryName">Your name</label><input id="enquiryName" name="name" autocomplete="name" required>
             <label for="enquiryPublication">Publication or publisher (optional)</label><input id="enquiryPublication" name="publication" autocomplete="organization">
             <label for="enquiryEmail">Your email</label><input id="enquiryEmail" name="email" type="email" autocomplete="email" required>
             <label for="enquiryMessage">What do you have in mind?</label><textarea id="enquiryMessage" name="message" rows="5" placeholder="Tell us about your audience, the cartoons you’re interested in and any deadlines." required></textarea>
             <button class="button primary" type="submit">Let’s talk cartoons</button>
-            <p class="form-note">Your email app will open with your enquiry ready to send. Prefer to write directly? <a href="mailto:nurk@collect1900.com">nurk@collect1900.com</a></p>
+            <p class="form-note">Send your enquiry directly to NURK. Prefer to write directly? <a href="mailto:nurk@collect1900.com">nurk@collect1900.com</a></p>
           </form>
         </div>
       </section>
@@ -98,14 +99,5 @@
 
     <script src="cartoons-data.js?v=23"></script>
     <script src="app.js?v=23"></script>
-    <script>
-      document.querySelector("#publisherEnquiry").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const data = new FormData(this);
-        const subject = "Publishing enquiry — " + data.get("publication");
-        const body = "Name: " + data.get("name") + "\nPublication: " + data.get("publication") + "\nEmail: " + data.get("email") + "\n\n" + data.get("message");
-        window.location.href = "mailto:nurk@collect1900.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      });
-    </script>
-  </body>
+</body>
 </html>
