@@ -642,3 +642,8 @@ h3 {
 .gallery-arrow[aria-disabled="true"] { opacity: 0.35; cursor: default; }
 .gallery-position { text-align: center; color: var(--muted); font-weight: 700; font-size: 0.9rem; margin: 20px 0 0; }
 @media (max-width: 560px) { .gallery-carousel { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; } .gallery-arrow { width: 36px; height: 44px; font-size: 2rem; } }
+
+.gallery-carousel { grid-template-columns: 48px minmax(0, 1fr) 48px; }
+.gallery-carousel .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+.gallery-carousel .gallery-grid:has(.cartoon-card:only-child) { max-width: 760px; width: 100%; justify-self: center; }
+@media (max-width: 560px) { .gallery-carousel { grid-template-columns: 36px minmax(0, 1fr) 36px; } .gallery-carousel .gallery-grid { grid-template-columns: 1fr; } }
