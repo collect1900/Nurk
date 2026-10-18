@@ -112,7 +112,18 @@ function enrichCartoons(items) {
   }));
 }
 
-const datedCartoons = enrichCartoons(cartoons);
+function getPublicationTodayToken(now = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Amsterdam", year: "2-digit", month: "2-digit", day: "2-digit"
+  }).formatToParts(now);
+  const part = type => parts.find(item => item.type === type).value;
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+// Only published cartoons may appear in the gallery, navigation or lightbox.
+const datedCartoons = enrichCartoons(cartoons).filter(cartoon =>
+  cartoon.publishedAt && cartoon.publishedAt <= getPublicationTodayToken()
+);
 
 let galleryItemIndex = 0;
 const carousel = document.createElement("div");
