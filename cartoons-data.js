@@ -4170,5 +4170,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-19.",
     "image": "assets/cartoons/26-10-19 500th cartoon.jpg"
+  },
+  {
+    "title": "Hllary on the loose",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-20.",
+    "image": "assets/cartoons/26-10-20 Hllary on the loose.jpg"
   }
 ];
