@@ -4179,10 +4179,17 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-10-20 Hllary on the loose.jpg"
   },
   {
-    "title": "Time of the Month",
+    "title": "France",
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-10-21.",
-    "image": "assets/cartoons/26-10-21 Time of the Month.jpg"
+    "image": "assets/cartoons/26-10-21 France.jpg"
+  },
+  {
+    "title": "Time of the Month",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-22.",
+    "image": "assets/cartoons/26-10-22 Time of the Month.jpg"
   }
 ];
