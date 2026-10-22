@@ -4191,5 +4191,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-22.",
     "image": "assets/cartoons/26-10-22 Time of the Month.jpg"
+  },
+  {
+    "title": "Postpone Midterms",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-23.",
+    "image": "assets/cartoons/26-10-23 Postpone Midterms.jpg"
   }
 ];
