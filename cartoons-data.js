@@ -4198,5 +4198,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-23.",
     "image": "assets/cartoons/26-10-23 Postpone Midterms.jpg"
+  },
+  {
+    "title": "Collect Nobel Peace Price",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-24.",
+    "image": "assets/cartoons/26-10-24 Collect Nobel Peace Price.jpg"
   }
 ];
