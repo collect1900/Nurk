@@ -4212,5 +4212,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-25.",
     "image": "assets/cartoons/26-10-25 World Peace.jpg"
+  },
+  {
+    "title": "Too soon",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-26.",
+    "image": "assets/cartoons/26-10-26 Too soon.jpg"
   }
 ];
