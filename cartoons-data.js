@@ -4219,5 +4219,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-26.",
     "image": "assets/cartoons/26-10-26 Too soon.jpg"
+  },
+  {
+    "title": "Cheesecake Factory",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-27.",
+    "image": "assets/cartoons/26-10-27 Cheesecake Factory.jpg"
   }
 ];
