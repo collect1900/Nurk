@@ -4226,5 +4226,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-27.",
     "image": "assets/cartoons/26-10-27 Cheesecake Factory.jpg"
+  },
+  {
+    "title": "Mr van Galen at Halloween",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-28.",
+    "image": "assets/cartoons/26-10-28 Mr van Galen at Halloween.jpg"
   }
 ];
