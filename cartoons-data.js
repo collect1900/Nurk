@@ -4233,5 +4233,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-28.",
     "image": "assets/cartoons/26-10-28 Mr van Galen at Halloween.jpg"
+  },
+  {
+    "title": "Emperor Trump",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-29.",
+    "image": "assets/cartoons/26-10-29 Emperor Trump.jpg"
   }
 ];
