@@ -4242,10 +4242,10 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-10-29 Emperor Trump.jpg"
   },
   {
-    "title": "wait for the laugh",
+    "title": "fucking up the free world",
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-10-30.",
-    "image": "assets/cartoons/26-10-30 wait for the laugh.jpg"
+    "image": "assets/cartoons/26-10-30 fucking up the free world.jpg"
   }
 ];
