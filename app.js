@@ -120,9 +120,12 @@ function getPublicationTodayToken(now = new Date()) {
   return `${part("year")}-${part("month")}-${part("day")}`;
 }
 
-// Only published cartoons may appear in the gallery, navigation or lightbox.
+const requestedDate = new URLSearchParams(window.location.search).get("date") || "";
+const requestedDateToken = /^20\d{2}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate.slice(2) : "";
+
+// A date link may preview that date; other future dates remain hidden.
 const datedCartoons = enrichCartoons(cartoons).filter(cartoon =>
-  cartoon.publishedAt && cartoon.publishedAt <= getPublicationTodayToken()
+  cartoon.publishedAt && (cartoon.publishedAt <= getPublicationTodayToken() || cartoon.publishedAt === requestedDateToken)
 );
 
 let galleryItemIndex = 0;
@@ -361,9 +364,14 @@ lightbox.addEventListener("click", (event) => {
   }
 });
 
-activeDate = getInitialGalleryDate();
+const hasRequestedDate = datedCartoons.some(cartoon => cartoon.publishedAt === requestedDateToken);
+activeDate = hasRequestedDate ? requestedDateToken : getInitialGalleryDate();
 activeSeason = activeDate ? getSeason(activeDate) : null;
 renderSeasons();
 renderDateStrip();
 renderFeature();
 renderGallery();
+
+if (hasRequestedDate) {
+  requestAnimationFrame(() => document.querySelector("#galerie").scrollIntoView({ block: "start" }));
+}
