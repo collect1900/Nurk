@@ -209,10 +209,11 @@ function getAvailableDates(season = null) {
 }
 
 function getInitialGalleryDate() {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  yesterday.setHours(23, 59, 59, 999);
-  return getAvailableDates().find(date => parseNurKDate(date) <= yesterday) || getDefaultDate();
+  const featureDate = hasRequestedDate ? requestedDateToken : getDefaultDate();
+  if (!featureDate) return "";
+  const previousDay = parseNurKDate(featureDate);
+  previousDay.setDate(previousDay.getDate() - 1);
+  return getAvailableDates().find(date => parseNurKDate(date) <= previousDay) || "";
 }
 
 function getDefaultDate(season = null) {
@@ -365,7 +366,7 @@ lightbox.addEventListener("click", (event) => {
 });
 
 const hasRequestedDate = datedCartoons.some(cartoon => cartoon.publishedAt === requestedDateToken);
-activeDate = hasRequestedDate ? requestedDateToken : getInitialGalleryDate();
+activeDate = getInitialGalleryDate();
 activeSeason = activeDate ? getSeason(activeDate) : null;
 renderSeasons();
 renderDateStrip();
