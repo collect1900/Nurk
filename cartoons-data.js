@@ -4240,5 +4240,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-29.",
     "image": "assets/cartoons/26-10-29 Emperor Trump.jpg"
+  },
+  {
+    "title": "wait for the laugh",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-30.",
+    "image": "assets/cartoons/26-10-30 wait for the laugh.jpg"
   }
 ];
