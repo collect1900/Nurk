@@ -304,7 +304,7 @@ function renderDateStrip() {
 }
 
 function renderFeature() {
-  const latestDate = getDefaultDate();
+  const latestDate = hasRequestedDate ? requestedDateToken : getDefaultDate();
   const featured = datedCartoons.find((cartoon) => cartoon.publishedAt === latestDate);
 
   if (!featured) {
@@ -372,6 +372,4 @@ renderDateStrip();
 renderFeature();
 renderGallery();
 
-if (hasRequestedDate) {
-  requestAnimationFrame(() => document.querySelector("#galerie").scrollIntoView({ block: "start" }));
-}
+
