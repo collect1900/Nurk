@@ -4247,5 +4247,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-30.",
     "image": "assets/cartoons/26-10-30 fucking up the free world.jpg"
+  },
+  {
+    "title": "wait for the laugh",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-10-31.",
+    "image": "assets/cartoons/26-10-31 wait for the laugh.jpg"
   }
 ];
