@@ -4254,5 +4254,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-10-31.",
     "image": "assets/cartoons/26-10-31 wait for the laugh.jpg"
+  },
+  {
+    "title": "go to the polls",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-01.",
+    "image": "assets/cartoons/26-11-01 go to the polls.jpg"
   }
 ];
