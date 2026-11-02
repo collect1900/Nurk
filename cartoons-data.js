@@ -4268,5 +4268,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-02.",
     "image": "assets/cartoons/26-11-02 Dallas.jpg"
+  },
+  {
+    "title": "Pretend",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-03.",
+    "image": "assets/cartoons/26-11-03 Pretend.jpg"
   }
 ];
