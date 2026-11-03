@@ -4275,5 +4275,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-03.",
     "image": "assets/cartoons/26-11-03 Pretend.jpg"
+  },
+  {
+    "title": "Tarrant County",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-04.",
+    "image": "assets/cartoons/26-11-04 Tarrant County.jpg"
   }
 ];
