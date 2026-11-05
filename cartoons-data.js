@@ -4289,5 +4289,19 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-05.",
     "image": "assets/cartoons/26-11-05 Der Untergang 2.jpg"
+  },
+  {
+    "title": "Captain Trumptanic 1",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-06.",
+    "image": "assets/cartoons/26-11-06 Captain Trumptanic 1.jpg"
+  },
+  {
+    "title": "Captain Trumptanic 2",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-06.",
+    "image": "assets/cartoons/26-11-06 Captain Trumptanic 2.jpg"
   }
 ];
