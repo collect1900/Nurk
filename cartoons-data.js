@@ -4282,5 +4282,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-04.",
     "image": "assets/cartoons/26-11-04 Tarrant County.jpg"
+  },
+  {
+    "title": "Der Untergang 2",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-05.",
+    "image": "assets/cartoons/26-11-05 Der Untergang 2.jpg"
   }
 ];
