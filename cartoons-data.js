@@ -4303,5 +4303,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-06.",
     "image": "assets/cartoons/26-11-06 Captain Trumptanic 2.jpg"
+  },
+  {
+    "title": "Bombed",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-07.",
+    "image": "assets/cartoons/26-11-07 Bombed.jpg"
   }
 ];
