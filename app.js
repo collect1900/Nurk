@@ -11,6 +11,7 @@ const lightboxCategory = document.querySelector("#lightboxCategory");
 const lightboxDescription = document.querySelector("#lightboxDescription");
 const closeButton = document.querySelector(".close-button");
 let activeDate = "";
+let featureItemIndex = 0;
 let activeSeason = null;
 const seasonSelect = document.querySelector("#seasonSelect");
 let lightboxItems = [];
@@ -306,15 +307,45 @@ function renderDateStrip() {
 
 function renderFeature() {
   const latestDate = hasRequestedDate ? requestedDateToken : getDefaultDate();
-  const featured = datedCartoons.find((cartoon) => cartoon.publishedAt === latestDate);
-
-  if (!featured) {
-    return;
+  const items = datedCartoons.filter(cartoon => cartoon.publishedAt === latestDate);
+  if (!items.length) return;
+  featureItemIndex = Math.min(featureItemIndex, items.length - 1);
+  const featured = items[featureItemIndex];
+  const art = createArtwork(featured, "feature-drawing");
+  art.id = "featureArt";
+  let carousel = document.querySelector("#featureCarousel");
+  if (!carousel) {
+    carousel = document.createElement("div");
+    carousel.id = "featureCarousel";
+    document.querySelector("#featureArt").replaceWith(carousel);
   }
-
-  document.querySelector("#featureArt")?.replaceWith(createArtwork(featured, "feature-drawing"));
-  document.querySelector(".feature-drawing").id = "featureArt";
-  featureCaption.textContent = `${featured.title} - ${formatDateToken(featured.publishedAt)}`;
+  carousel.className = items.length > 1 ? "gallery-carousel feature-carousel" : "feature-carousel";
+  if (items.length > 1) {
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.className = "gallery-arrow";
+    previous.textContent = "‹";
+    previous.setAttribute("aria-label", "Previous featured cartoon");
+    previous.setAttribute("aria-disabled", String(featureItemIndex === 0));
+    const next = document.createElement("button");
+    next.type = "button";
+    next.className = "gallery-arrow";
+    next.textContent = "›";
+    next.setAttribute("aria-label", "Next featured cartoon");
+    next.setAttribute("aria-disabled", String(featureItemIndex === items.length - 1));
+    const move = offset => {
+      const index = featureItemIndex + offset;
+      if (index < 0 || index >= items.length) return;
+      featureItemIndex = index;
+      renderFeature();
+    };
+    previous.addEventListener("click", () => move(-1));
+    next.addEventListener("click", () => move(1));
+    carousel.replaceChildren(previous, art, next);
+  } else {
+    carousel.replaceChildren(art);
+  }
+  featureCaption.textContent = featured.title + " - " + formatDateToken(featured.publishedAt) + (items.length > 1 ? " · " + (featureItemIndex + 1) + " of " + items.length : "");
 }
 
 function renderGallery() {
