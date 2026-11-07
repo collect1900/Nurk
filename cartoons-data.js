@@ -4310,5 +4310,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-07.",
     "image": "assets/cartoons/26-11-07 off the table.jpg"
+  },
+  {
+    "title": "Health Insurance Card",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-08.",
+    "image": "assets/cartoons/26-11-08  Health Insurance Card.jpg"
   }
 ];
