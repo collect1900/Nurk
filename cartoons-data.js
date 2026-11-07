@@ -4323,6 +4323,6 @@ window.nurkCartoons = [
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-11-09.",
-    "image": "assets/cartoons/26-11-09 See the Ballroom.jpg"
+    "image": "assets/cartoons/26-11-09 See the Ballroom.jpg?v=20261107-2253"
   }
 ];
