@@ -4324,5 +4324,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-09.",
     "image": "assets/cartoons/26-11-09 See the Ballroom.jpg?v=20261107-2253"
+  },
+  {
+    "title": "National Monument",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-10.",
+    "image": "assets/cartoons/26-11-10 National Monument.jpg"
   }
 ];
