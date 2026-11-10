@@ -4331,5 +4331,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-10.",
     "image": "assets/cartoons/26-11-10 National Monument.jpg"
+  },
+  {
+    "title": "Baby Duck",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-11.",
+    "image": "assets/cartoons/26-11-11 Baby Duck.jpg"
   }
 ];
