@@ -4338,5 +4338,19 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-11.",
     "image": "assets/cartoons/26-11-11 Baby Duck.jpg"
+  },
+  {
+    "title": "New chip design",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-12.",
+    "image": "assets/cartoons/26-11-12 new chip design.jpg"
+  },
+  {
+    "title": "Bride",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-13.",
+    "image": "assets/cartoons/26-11-13 bride.jpg"
   }
 ];
