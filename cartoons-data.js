@@ -4366,5 +4366,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-15.",
     "image": "assets/cartoons/26-11-15 no flights.jpg"
+  },
+  {
+    "title": "New generation",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-16.",
+    "image": "assets/cartoons/26-11-16 new generation.jpg"
   }
 ];
