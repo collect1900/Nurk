@@ -4352,5 +4352,19 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-13.",
     "image": "assets/cartoons/26-11-13 bride.jpg"
+  },
+  {
+    "title": "Microsoft",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-14.",
+    "image": "assets/cartoons/26-11-14 Microsoft.jpg"
+  },
+  {
+    "title": "No flights",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-15.",
+    "image": "assets/cartoons/26-11-15 no flights.jpg"
   }
 ];
