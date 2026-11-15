@@ -4372,6 +4372,6 @@ window.nurkCartoons = [
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-11-16.",
-    "image": "assets/cartoons/26-11-16 Hegseth Vote.jpg"
+    "image": "assets/cartoons/26-11-16 Hegseth Vote.jpg?v=20261115-1953"
   }
 ];
