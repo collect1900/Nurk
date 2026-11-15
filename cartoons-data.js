@@ -4368,10 +4368,10 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-11-15 no flights.jpg"
   },
   {
-    "title": "New generation",
+    "title": "Hegseth Vote",
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-11-16.",
-    "image": "assets/cartoons/26-11-16 new generation.jpg"
+    "image": "assets/cartoons/26-11-16 Hegseth Vote.jpg"
   }
 ];
