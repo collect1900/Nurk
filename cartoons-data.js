@@ -4380,5 +4380,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-17.",
     "image": "assets/cartoons/26-11-17 20000th follower.jpg"
+  },
+  {
+    "title": "Stratego",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-18.",
+    "image": "assets/cartoons/26-11-18  Stratego.jpg"
   }
 ];
