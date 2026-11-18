@@ -1,0 +1,23 @@
+window.nurkVandaagCartoons = [
+  {
+    "title": "Trekvogels",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-15 Trekvogels.jpg"
+  },
+  {
+    "title": "Podcast",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-16 Podcast.jpg"
+  },
+  {
+    "title": "Persconferentie",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-17 Persconferentie.jpg"
+  }
+];

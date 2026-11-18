@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NURK Cartoons</title>
     <meta name="description" content="A portfolio of NURK cartoons, comic strips and drawings.">
-    <link rel="stylesheet" href="styles.css?v=26">
+    <link rel="stylesheet" href="styles.css?v=27">
   </head>
   <body>
     <header class="site-header">
@@ -15,6 +15,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#galerie">The Daily Nurk</a>
+        <a href="#nurk-vandaag">Nurk Vandaag</a>
         <a href="#over">About Us</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -50,6 +51,30 @@
         <div class="season-picker"><label for="seasonSelect">Browse by season</label><select id="seasonSelect"></select><p id="seasonRange" hidden></p></div>
         <div class="date-strip" id="dateStrip" aria-label="Choose a publication date"></div>
         <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="gallery-section vandaag-section" id="nurk-vandaag" aria-labelledby="vandaag-title">
+        <div class="daily-nurk">
+          <div>
+            <h2 id="vandaag-title">Nurk Vandaag</h2>
+            <img class="daily-illustration vandaag-illustration" src="assets/nurk_vandaag%20logo.jpg" alt="NURK in Dutch traditional dress, holding a bunch of tulips" width="704" height="995" loading="lazy">
+          </div>
+          <div class="daily-copy">
+            <h3>Going Dutch</h3>
+            <p>Following the international success of <strong>The Daily Nurk</strong>, it’s time to launch a little Dutch sibling featuring cartoons in Dutch: <strong>Nurk Vandaag</strong>.<br>Not every day, but whenever there’s something worth laughing about.<br>Follow us on Instagram: <a href="https://www.instagram.com/nurk.vandaag/" target="_blank" rel="noopener noreferrer">nurk.vandaag</a>.</p>
+            <div class="gallery-intro">
+              <h3>Gallery</h3>
+              <p class="gallery-invitation">Discover the Dutch side of NURK. Pick a date below to revisit our cartoons in Dutch.</p>
+            </div>
+          </div>
+        </div>
+        <div class="date-strip" id="vandaagDateStrip" aria-label="Choose a Nurk Vandaag publication date"></div>
+        <div class="gallery-carousel" id="vandaagCarousel" role="region" aria-label="Browse Nurk Vandaag cartoons" tabindex="0">
+          <button class="gallery-arrow" id="vandaagNewer" type="button" aria-label="Newer Nurk Vandaag cartoons">‹</button>
+          <div class="gallery-grid" id="vandaagGrid" aria-live="polite"></div>
+          <button class="gallery-arrow" id="vandaagOlder" type="button" aria-label="Older Nurk Vandaag cartoons">›</button>
+        </div>
+        <p class="gallery-position" id="vandaagPosition" role="status"></p>
       </section>
 
       <section class="about-section" id="over" aria-labelledby="about-title">
@@ -98,7 +123,9 @@
     </dialog>
 
     <script src="cartoons-data.js?v=65"></script>
-    <script src="app.js?v=43"></script>
+    <script src="app.js?v=44"></script>
+    <script src="nurk-vandaag-data.js?v=1"></script>
+    <script src="nurk-vandaag.js?v=1"></script>
     <script data-goatcounter="https://nurk.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

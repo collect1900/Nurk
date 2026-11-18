@@ -245,8 +245,8 @@ function createArtwork(cartoon, sizeClass = "thumb") {
   return art;
 }
 
-function openLightbox(cartoon) {
-  lightboxItems = datedCartoons.filter((item) => item.publishedAt === cartoon.publishedAt);
+function openLightbox(cartoon, collection = datedCartoons) {
+  lightboxItems = collection.filter((item) => item.publishedAt === cartoon.publishedAt);
   lightboxIndex = lightboxItems.indexOf(cartoon);
   renderLightbox();
   lightbox.showModal();
