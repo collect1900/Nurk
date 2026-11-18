@@ -19,5 +19,12 @@ window.nurkVandaagCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons nurkvandaag/26-11-17 Persconferentie.jpg"
+  },
+  {
+    "title": "Gemsen-gems",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-18 Gemsen-gems.jpg"
   }
 ];
