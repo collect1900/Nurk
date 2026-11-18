@@ -657,3 +657,7 @@ section[id] { scroll-margin-top: 120px; }
 @media (max-width: 560px) {
   .site-header nav { justify-content: flex-start; gap: 10px 20px; }
 }
+
+/* Alternate the five main sections: dark, light, dark, light, dark. */
+.vandaag-section { background: transparent; }
+.about-section { background: rgba(255, 253, 248, 0.72); }
