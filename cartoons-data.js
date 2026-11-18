@@ -4305,11 +4305,11 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-11-06 Captain Trumptanic 2.jpg"
   },
   {
-    "title": "Off the table",
     "category": "cartoon",
+    "image": "assets/cartoons/26-11-07 off the table.jpg",
     "type": "cartoon",
     "description": "NURK for 26-11-07.",
-    "image": "assets/cartoons/26-11-07 off the table.jpg"
+    "title": "Off the table"
   },
   {
     "title": "Health Insurance Card",
@@ -4341,38 +4341,38 @@ window.nurkCartoons = [
   },
   {
     "title": "New chip design",
-    "category": "cartoon",
     "type": "cartoon",
+    "image": "assets/cartoons/26-11-12 new chip design.jpg",
     "description": "NURK for 26-11-12.",
-    "image": "assets/cartoons/26-11-12 new chip design.jpg"
+    "category": "cartoon"
   },
   {
     "title": "Bride",
-    "category": "cartoon",
     "type": "cartoon",
+    "image": "assets/cartoons/26-11-13 bride.jpg",
     "description": "NURK for 26-11-13.",
-    "image": "assets/cartoons/26-11-13 bride.jpg"
+    "category": "cartoon"
   },
   {
-    "title": "Microsoft",
     "category": "cartoon",
     "type": "cartoon",
+    "image": "assets/cartoons/26-11-14 Microsoft.jpg",
     "description": "NURK for 26-11-14.",
-    "image": "assets/cartoons/26-11-14 Microsoft.jpg"
+    "title": "Microsoft"
   },
   {
-    "title": "No flights",
     "category": "cartoon",
     "type": "cartoon",
+    "image": "assets/cartoons/26-11-15 no flights.jpg",
     "description": "NURK for 26-11-15.",
-    "image": "assets/cartoons/26-11-15 no flights.jpg"
+    "title": "No flights"
   },
   {
-    "title": "Hegseth Vote",
-    "category": "cartoon",
-    "type": "cartoon",
     "description": "NURK for 26-11-16.",
-    "image": "assets/cartoons/26-11-16 Hegseth Vote.jpg?v=20261115-1953"
+    "category": "cartoon",
+    "title": "Hegseth Vote",
+    "image": "assets/cartoons/26-11-16 Hegseth Vote.jpg?v=20261115-1953",
+    "type": "cartoon"
   },
   {
     "title": "20000th follower",
@@ -4389,10 +4389,10 @@ window.nurkCartoons = [
     "image": "assets/cartoons/26-11-18  Stratego.jpg"
   },
   {
-    "title": "New generation",
+    "title": "Cat and Mouse",
     "category": "cartoon",
     "type": "cartoon",
     "description": "NURK for 26-11-19.",
-    "image": "assets/cartoons/26-11-19 new generation.jpg"
+    "image": "assets/cartoons/26-11-19 Cat and Mouse.jpg"
   }
 ];
