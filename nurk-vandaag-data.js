@@ -32,6 +32,6 @@ window.nurkVandaagCartoons = [
     "category": "Nurk Vandaag",
     "type": "cartoon",
     "description": "",
-    "image": "assets/cartoons nurkvandaag/26-11-19 1000-dingen doekje.jpg"
+    "image": "assets/cartoons nurkvandaag/26-11-19 1000-dingen doekje.jpg?v=20261119-105128"
   }
 ];
