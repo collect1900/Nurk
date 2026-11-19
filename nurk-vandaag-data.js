@@ -26,5 +26,12 @@ window.nurkVandaagCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons nurkvandaag/26-11-18 Gemsen-gems.jpg"
+  },
+  {
+    "title": "1000-dingen doekje",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-19 1000-dingen doekje.jpg"
   }
 ];

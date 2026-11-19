@@ -4394,5 +4394,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-19.",
     "image": "assets/cartoons/26-11-19 Cat and Mouse.jpg"
+  },
+  {
+    "title": "Connection lost",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-20.",
+    "image": "assets/cartoons/26-11-20 Connection lost.jpg"
   }
 ];
