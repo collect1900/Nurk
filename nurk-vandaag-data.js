@@ -33,5 +33,12 @@ window.nurkVandaagCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons nurkvandaag/26-11-19 1000-dingen doekje.jpg?v=20261119-105128"
+  },
+  {
+    "title": "Vertrouwen",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-20 Vertrouwen.jpg"
   }
 ];

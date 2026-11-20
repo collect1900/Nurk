@@ -4401,5 +4401,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-20.",
     "image": "assets/cartoons/26-11-20 Connection lost.jpg"
+  },
+  {
+    "title": "New Generation",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-21.",
+    "image": "assets/cartoons/26-11-21 New Generation.jpg"
   }
 ];
