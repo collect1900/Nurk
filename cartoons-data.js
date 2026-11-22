@@ -4408,5 +4408,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-21.",
     "image": "assets/cartoons/26-11-21 New Generation.jpg"
+  },
+  {
+    "title": "Youtube",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-22.",
+    "image": "assets/cartoons/26-11-22 Youtube.jpg"
   }
 ];
