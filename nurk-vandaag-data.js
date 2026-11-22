@@ -46,6 +46,6 @@ window.nurkVandaagCartoons = [
     "category": "Nurk Vandaag",
     "type": "cartoon",
     "description": "",
-    "image": "assets/cartoons nurkvandaag/26-11-22 Thuisfluiter.jpg"
+    "image": "assets/cartoons nurkvandaag/26-11-22 Thuisfluiter.jpg?v=20261122-183515"
   }
 ];
