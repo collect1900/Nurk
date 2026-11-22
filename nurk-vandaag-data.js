@@ -42,10 +42,10 @@ window.nurkVandaagCartoons = [
     "image": "assets/cartoons nurkvandaag/26-11-20 Vertrouwen.jpg"
   },
   {
-    "title": "Youtube",
+    "title": "Thuisfluiter",
     "category": "Nurk Vandaag",
     "type": "cartoon",
     "description": "",
-    "image": "assets/cartoons nurkvandaag/26-11-22 Youtube.jpg"
+    "image": "assets/cartoons nurkvandaag/26-11-22 Thuisfluiter.jpg"
   }
 ];
