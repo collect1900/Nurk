@@ -4422,5 +4422,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons/26-11-23 Outages.jpg"
+  },
+  {
+    "title": "Handbags",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-24.",
+    "image": "assets/cartoons/26-11-24 Handbags.jpg"
   }
 ];
