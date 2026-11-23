@@ -4415,5 +4415,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-22.",
     "image": "assets/cartoons/26-11-22 Youtube.jpg"
+  },
+  {
+    "title": "Outages",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons/26-11-23 Outages.jpg"
   }
 ];

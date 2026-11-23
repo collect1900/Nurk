@@ -47,5 +47,12 @@ window.nurkVandaagCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons nurkvandaag/26-11-22 Thuisfluiter.jpg?v=20261122-183515"
+  },
+  {
+    "title": "Michelin",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-23  Michelin.jpg"
   }
 ];
