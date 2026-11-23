@@ -54,5 +54,12 @@ window.nurkVandaagCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons nurkvandaag/26-11-23  Michelin.jpg"
+  },
+  {
+    "title": "FVD",
+    "category": "Nurk Vandaag",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons nurkvandaag/26-11-24 fvd.jpg"
   }
 ];
