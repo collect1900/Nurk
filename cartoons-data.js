@@ -4429,5 +4429,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons/26-11-24 Crappy Days.jpg"
+  },
+  {
+    "title": "Ahead of the Chinese",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons/26-11-25 Ahead of the Chinese.jpg"
   }
 ];
