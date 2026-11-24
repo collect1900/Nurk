@@ -67,6 +67,6 @@ window.nurkVandaagCartoons = [
     "category": "Nurk Vandaag",
     "type": "cartoon",
     "description": "",
-    "image": "assets/cartoons nurkvandaag/26-11-25 Sinterrob journaal.jpg"
+    "image": "assets/cartoons nurkvandaag/26-11-25 Sinterrob journaal.jpg?v=20261124-182644"
   }
 ];
