@@ -4436,5 +4436,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "",
     "image": "assets/cartoons/26-11-25 Ahead of the Chinese.jpg"
+  },
+  {
+    "title": "Handbags",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "",
+    "image": "assets/cartoons/26-11-26 Handbags.jpg"
   }
 ];
