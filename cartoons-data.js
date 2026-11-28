@@ -4450,5 +4450,12 @@ window.nurkCartoons = [
     "type": "cartoon",
     "description": "NURK for 26-11-27.",
     "image": "assets/cartoons/26-11-27 Pressure on Putin.jpg"
+  },
+  {
+    "title": "Black Friday",
+    "category": "cartoon",
+    "type": "cartoon",
+    "description": "NURK for 26-11-28.",
+    "image": "assets/cartoons/26-11-28 Black Friday.jpg"
   }
 ];
